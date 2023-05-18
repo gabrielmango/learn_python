@@ -1,4 +1,4 @@
-# Type list - Introduction to mutable lists in Python
+# # Type list - Introduction to mutable lists in Python
 
 import os
 os.system('cls')
@@ -54,4 +54,32 @@ print(nome4, another_names)
 os.system('cls')
 names = ('Maria', 'Júlia', 'Ana')
 print(names, type(names))
+
+
+sentence = 'look at that, interesting thing'
+print(sentence)
+words_list_1 = sentence.split()
+print(words_list_1)
+sentence_2 = 'look at that, interesting thing'
+words_list_2 = sentence.split(',')
+print(words_list_2)
+sentence_3 = 'look at that, interesting thing'
+words_list_3 = sentence.split(',')
+sentence_list_fixed = []
+for i, sentence in enumerate(words_list_3):
+    sentence_list_fixed.append(words_list_3[i].strip())
+print(sentence_list_fixed)
+unided_sentences = '-'.join(sentence_list_fixed)
+print(unided_sentences)
+
+
+classrooms = [
+    ['Maria', 'Helena'],
+    ['Elaine'],
+    ['Luiz', 'João', 'Eduarda',],   
+]
+print(classrooms)
+for classroom in classrooms:
+    for student in classroom:
+        print(student)
 
