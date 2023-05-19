@@ -1,4 +1,7 @@
-# Introduction to code blocks + if / elif / else (conditionals)
+# # Introduction to code blocks + if / elif / else (conditionals)
+
+import os
+os.system('cls')
 
 entry_1 = input("Do you want to 'enter' or 'leave'?")
 if entry_1 == 'enter':
@@ -78,4 +81,9 @@ print(f'{value:0=+10,.1f}.')
 print(f'{integer:08x}.')
 
 
+# Ternary operation with Python (one-line if and else)
+
+condition = False
+variable = 'Value' if condition else 'Another value'
+print(variable)
 
