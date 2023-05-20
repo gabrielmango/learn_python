@@ -49,3 +49,15 @@ print(division_1)
 
 division_1 = division(10, 0)
 print(division_1)
+
+# *args for number of unnamed variable arguments
+os.system('cls')
+
+def sum_args(*args):
+    result = 0
+    for number in args:
+        result += number
+    return result
+
+sum_args = sum_args(1,2,3,4,5,6)
+print(sum_args)
