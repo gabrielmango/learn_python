@@ -61,3 +61,33 @@ def sum_args(*args):
 
 sum_args = sum_args(1,2,3,4,5,6)
 print(sum_args)
+
+# Higher Order Functions
+os.system('cls')
+
+def say_the_mensagem(mensagem, name):
+    return f'{mensagem}, {name}'
+
+def execute_the_function(function, *args):
+    return function(*args)
+
+variable = execute_the_function(say_the_mensagem, 'Hello world', 'Gabriel')
+
+print(variable)
+
+# Closure and functions that return other functions
+os.system('cls')
+
+def create_salutation(salutation):
+    def say_salutation(name):
+        return f'{salutation}, {name}!'
+    return say_salutation
+
+say_good_morning = create_salutation('Good morning')
+say_good_afternoon = create_salutation('Good afternoon')
+
+for name in ['Maria', 'João', 'Ana']:
+    print(say_good_morning(name))
+
+for name in ['Maria', 'João', 'Ana']:
+    print(say_good_afternoon(name))
