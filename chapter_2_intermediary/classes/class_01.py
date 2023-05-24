@@ -91,3 +91,25 @@ for name in ['Maria', 'João', 'Ana']:
 
 for name in ['Maria', 'João', 'Ana']:
     print(say_good_afternoon(name))
+
+
+# Problem with mutable parameters in Python functions
+os.system('cls')
+
+def add_customer(name, list_customers=None):
+    if list_customers is None:
+        list_customers = []
+    list_customers.append(name)
+    return list_customers
+
+customers_1 = add_customer('Ana')
+add_customer('Lucas', customers_1)
+print(customers_1)
+
+customers_2 = add_customer('Elizabeth')
+add_customer('Carlos', customers_2)
+print(customers_2)
+
+customers_3 = add_customer('Eliza')
+add_customer('Carlinhos',customers_3)
+print(customers_3)
