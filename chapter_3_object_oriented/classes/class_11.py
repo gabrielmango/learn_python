@@ -49,3 +49,22 @@ print(mars)
 
 print(earth.say_name())
 print(mars.say_name())
+
+os.system('cls')
+
+class Multiply:
+    def __init__(self, multiplier):
+        self._multiplier = multiplier
+
+    def __call__(self, func):
+        def internal(*args, **kwargs):
+            result = func(*args, **kwargs)
+            return result * self._multiplier
+        return internal
+    
+@Multiply(2)
+def sum(x, y):
+    return x + y
+
+two_plus_two = sum(2, 2)
+print(two_plus_two)
