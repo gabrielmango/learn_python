@@ -1,4 +1,5 @@
-import os 
+import os
+from typing import Any 
 
 os.system('cls')
 
@@ -49,3 +50,18 @@ class A:
 
 a = A(123)
 print(a.x)
+
+os.system('cls')
+
+class CallMe:
+    def __init__(self, phone_number):
+        self.phone_number = phone_number
+
+    def __call__(self, name):
+        print(f'{name} is calling - {self.phone_number}')
+        return self.phone_number
+    
+call_me_1 = CallMe('123456789')
+
+phone_number = call_me_1('Gabriel')
+print(phone_number)
