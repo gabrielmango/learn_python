@@ -31,4 +31,21 @@ if __name__ == '__main__':
     print('p1 > p2?', p1 > p2)
     print('p2 > p1?', p2 > p1)
 
+os.system('cls')
 
+class A:
+    def __new__(cls, *args, **kwargs):
+        print('Before instance.')
+        instance = super().__new__(cls)
+        print('After instance.')
+        return instance
+    
+    def __init__(self, x):
+        self.x = x
+        print('I am instance.')
+
+    def __repr__(self):
+        return 'A()'
+
+a = A(123)
+print(a.x)
