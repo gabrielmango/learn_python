@@ -1,5 +1,6 @@
 import abc
 
+
 class Account(abc.ABC):
     def __init__(self, agency, account, balance=0):
         self.agency = agency
@@ -11,11 +12,12 @@ class Account(abc.ABC):
 
     def cash_deposit(self, value):
         self.balance += value
-        self.details(f'(DEPOSIT) {value}') 
+        self.details(f'(DEPOSIT) {value}')
 
-    def details(self, message = ''):
+    def details(self, message: str = ''):
         print(f'Your balance is {self.balance:.2f} {message}')
         print('---')
+
 
 class SavingsAccount(Account):
     def withdraw_money(self, value):
@@ -25,7 +27,6 @@ class SavingsAccount(Account):
             self.balance -= value
             self.details(f'(WITHDRAW) {value}')
             return self.balance
-        
         print('Unable to withdraw desired amount!')
         self.details(f'(WITHDRAW DENIED) {value}') 
 
@@ -47,6 +48,7 @@ class CurrentAccount(Account):
         print('Unable to withdraw desired amount!')
         print(f'Your limit is {-self.limit:.2f}')
         self.details(f'(WITHDRAW DENIED) {value}')
+
 
 if __name__ == '__main__':
     current_account_1 = CurrentAccount(111, 222, 0, 100)
