@@ -18,6 +18,11 @@ class Account(abc.ABC):
         print(f'Your balance is {self.balance:.2f} {message}')
         print('---')
 
+    def __repr__(self):
+        class_name = type(self).__name__
+        attrs = f'({self.agency!r}, {self.account!r}, {self.balance!r})'
+        return f'{class_name}{attrs}'
+
 
 class SavingsAccount(Account):
     def withdraw_money(self, value):
@@ -48,6 +53,11 @@ class CurrentAccount(Account):
         print('Unable to withdraw desired amount!')
         print(f'Your limit is {-self.limit:.2f}')
         self.details(f'(WITHDRAW DENIED) {value}')
+
+    def __repr__(self):
+        class_name = type(self).__name__
+        attrs = f'({self.agency!r}, {self.account!r}, {self.balance!r}, {self.limit!r})'
+        return f'{class_name}{attrs}'
 
 
 if __name__ == '__main__':
