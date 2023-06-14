@@ -38,3 +38,10 @@ delta = end_date - start_date
 print(delta)
 print(delta.total_seconds())
 print(delta.days, delta.seconds, delta.microseconds)
+
+os.system('cls')
+
+date_7 = datetime.strptime('2022-12-13 07:59:23', '%Y-%m-%d %H:%M:%S')
+print(date_7.strftime('%d/%m/%Y'))
+print(date_7.strftime('%d/%m/%Y %H:%M'))
+print(date_7.strftime('%d/%m/%Y %H:%M:%S'))
