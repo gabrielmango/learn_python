@@ -9,8 +9,8 @@ print(year_2022)
 
 print('-' * 100)
 
-dezember_2022 = calendar.month(2022, 12)
-print(dezember_2022)
+december_2022 = calendar.month(2022, 12)
+print(december_2022)
 
 print('-' * 100)
 
