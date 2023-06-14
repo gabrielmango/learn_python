@@ -23,3 +23,18 @@ print(date_5)
 date_6 = datetime.fromtimestamp(1476680222)
 print(date_6)
 
+os.system('cls')
+
+fmt = '%d/%m/%Y %H:%M:%S'
+start_date = datetime.strptime('20/04/1987 09:30:30', fmt)
+end_date = datetime.strptime('12/12/2022 08:20:20', fmt)
+
+print(f'{start_date} == {end_date}: {start_date == end_date}')
+print(f'{start_date} > {end_date}: {start_date > end_date}')
+print(f'{start_date} < {end_date}: {start_date < end_date}')
+print()
+
+delta = end_date - start_date
+print(delta)
+print(delta.total_seconds())
+print(delta.days, delta.seconds, delta.microseconds)
